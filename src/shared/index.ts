@@ -24,6 +24,12 @@ export interface Edge {
   weight: number;
 }
 
+export interface GeneratedData {
+  nodes: { topicName: string; description?: string; keywords: string[]; narration: string; }[];
+  edges: { from: string; to: string; relationship: string; }[];
+  // ... other fields
+}
+
 export interface RabbitHoleNode {
   id: string;
   topicId: string;

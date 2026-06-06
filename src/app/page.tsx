@@ -34,7 +34,21 @@ export default function LandingPage() {
       });
 
       // Store the generated data in the global store
-      setGeneratedData(result);
+      setGeneratedData({
+        ...result,
+        nodes: result.nodes.map(n => ({
+          topicName: n.topic.name,
+          description: n.topic.description ?? undefined,
+          keywords: n.topic.keywords,
+          narration: n.narration ?? '',
+        })),
+        edges: result.edges?.map(e => ({
+          from: e.sourceId,
+          to: e.targetId,
+          relationship: e.relationship,
+        })) ?? [],
+      });
+
       router.push('/explore');
     } catch (e: any) {
       setError(e.message || 'Failed to start exploration');

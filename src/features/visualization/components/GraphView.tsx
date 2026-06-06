@@ -17,7 +17,7 @@ import {
 import '@xyflow/react/dist/style.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface GraphNodeData {
+interface GraphNodeData extends Record<string, unknown> {
   label: string;
   description?: string;
   keywords?: string[];
@@ -25,7 +25,7 @@ interface GraphNodeData {
   isActive?: boolean;
 }
 
-function CustomNode({ data }: NodeProps<Node<GraphNodeData>>) {
+function CustomNode({ data }: NodeProps<Node<GraphNodeData & Record<string, unknown>>>) {
   return (
     <div className="px-4 py-3 rounded-lg border border-border bg-card shadow-lg min-w-[150px] text-center">
       <Handle type="target" position={Position.Top} className="!bg-primary" />

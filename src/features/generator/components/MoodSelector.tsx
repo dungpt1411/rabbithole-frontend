@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mood } from '@rabbit-hole/shared';
+import { Mood } from '@/shared';
 import { cn } from '@/components/ui/button';
 
 interface MoodSelectorProps {

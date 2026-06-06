@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { RabbitHole, RabbitHoleNode, Edge, Mood } from '@rabbit-hole/shared';
+import type { RabbitHole, RabbitHoleNode, Edge, Mood } from '@/shared';
 
 interface GeneratedData {
   title: string;
