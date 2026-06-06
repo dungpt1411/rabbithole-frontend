@@ -25,7 +25,7 @@ export default function ExplorePage() {
 
   const handleNodeClick = (nodeId: string) => {
     const index = generatedData?.nodes.findIndex(n => n.topicName === nodeId);
-    if (index !== -1) {
+    if (index !== undefined && index !== -1) {
       setActiveNodeIndex(index);
     }
   };
