@@ -72,8 +72,17 @@ export interface GenerateRabbitHoleRequest {
 export interface GenerateRabbitHoleResponse {
   id: string;
   title: string;
-  nodes: RabbitHoleNode[];
-  edges: Edge[];
+  nodes: {
+    topicName: string;
+    description?: string;
+    keywords: string[];
+    narration: string;
+  }[];
+  edges: {
+    from: string;
+    to: string;
+    relationship: string;
+  }[];
   generationTime: number;
 }
 

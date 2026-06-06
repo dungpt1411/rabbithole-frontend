@@ -7,21 +7,20 @@ export interface Topic {
     mood?: Mood;
     createdAt: Date;
 }
+
 export interface Edge {
-    id: string;
-    sourceId: string;
-    targetId: string;
-    relationship: string;
-    weight: number;
+  from: string;
+  to: string;
+  relationship: string;
 }
+
 export interface RabbitHoleNode {
-    id: string;
-    topicId: string;
-    rabbitHoleId: string;
-    order: number;
-    narration?: string;
-    topic: Topic;
+  topicName: string;
+  description?: string;
+  keywords: string[];
+  narration: string;
 }
+
 export interface RabbitHole {
     id: string;
     userId?: string;
